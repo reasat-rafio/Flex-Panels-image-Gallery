@@ -1,0 +1,88 @@
+html {
+    box-sizing: border-box;
+    background: #ffc600;
+    font-family: sans-serif;
+    font-size: 20px;
+    font-weight: 200;
+}
+
+body{
+    margin: 0;
+}
+
+*, *::after, *::before{
+    box-sizing: inherit;
+}
+
+.panels {
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+}
+
+.panel {
+    background: #6b0f9c;
+    box-shadow: inset 0 0 0 5px rgba(255, 155, 255, 0.1);
+    color: white;
+    text-align: center;
+    align-items: center;
+
+    /*  */
+    
+    transition: 
+        font-size 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11),
+        flex 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11),
+        background 0.2s;
+    font-size: 20px;
+    background-size: cover;
+    display: flex;
+    background-position: center;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.panel1 {background-image: url("https://cdn.pixabay.com/photo/2020/03/26/05/07/travel-4969279__340.jpg");}
+.panel2 {background-image: url("https://cdn.pixabay.com/photo/2020/03/27/21/26/costa-rica-4975038__340.jpg");}
+.panel3 {background-image: url("https://cdn.pixabay.com/photo/2020/03/26/20/57/train-4971800__340.jpg");}
+.panel4 {background-image: url("https://cdn.pixabay.com/photo/2018/07/13/06/06/bangladesh-3535023__340.jpg");}
+.panel5 {background-image: url("https://cdn.pixabay.com/photo/2020/03/30/12/21/sunset-4984077__340.jpg");}
+
+/*  */
+
+.panel > * {
+    margin: 0;
+    width: 100%;
+    transition: transform 0.5s;
+    flex: 1 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.panel > *:first-child {transform: translateY(-100%);}
+.panel.open-active > *:first-child {transform: translateY(0);}
+.panel > *:last-child {transform: translateY(100%);}
+.panel.open-active > *:last-child {transform: translateY(0);}
+
+.panel p {
+    text-transform: uppercase;
+    font-family: cursive;
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45);
+    font-size: 2em;
+}
+
+.panel p :nth-child(2){
+    font-size: 4em;
+}
+
+ .panel.open{
+    flex: 5;
+    font-size: 40px;
+}
+
+.cta{
+    color: white;
+    text-decoration: none;
+}
